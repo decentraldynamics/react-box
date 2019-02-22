@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React+Data Starter Box",
+  "name": "Truffle box for getting started building data driven React DApps",
   "icons": [
     {
       "src": "favicon.ico",
