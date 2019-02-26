@@ -4,14 +4,13 @@
     ".gitignore"
   ],
   "commands": {
+    "Install": "npm install",
     "Compile": "truffle compile",
     "Migrate": "truffle migrate",
     "Test contracts": "truffle test",
-    "Test dapp": "cd client && npm test",
+    "Install DApp": "cd client && npm install",
+    "Test dapp": "cd client && npm run test",
     "Run dev server": "cd client && npm run start",
     "Build for production": "cd client && npm run build"
-  },
-  "hooks": {
-    "post-unpack": "cd client && npm install"
   }
 }
