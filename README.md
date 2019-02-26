@@ -1,16 +1,18 @@
-# React Truffle Starter Box
+# React+Data Starter Truffle Box
 
-This box is extends on the bare-bones react-box truffle by adding:
-* A lower level view in the data structures truffle uses under the hood
-* Detecting events emitted from a contract call.
+This box extends on the basic react-box by adding:
+* A lower level view on the data structures truffle uses under the hood
+* Showing events emitted from a contract call.
 * Simple get/set UI components for interacting with a contract.
 * Debug logs and helpful messaging for when things don't go right.
+* A walking tour of the DApp's showing some of the interactions between the browser, MetaMask, Ganache and the contract.
+
 
 ## Installation
 
 In terminal #1:
 ```
-$ git clone ....
+$ git clone https://github.com/decentraldynamics/react-data-starter-box.git
 $ cd react-data-starter-box/
 $ npm install -g truffle
 $ npm install
@@ -25,7 +27,7 @@ $ npm install -g ganache-cli
 $ ganache-cli -p 8545
 ```
 
-Note: Disable MetaMask if you already have it installed in your browser (Chrome -> Window -> Extensions). We'll enable it later but lets start off simple and connect to Ganache directly for now.
+Note: Disable MetaMask if you already have it installed in your browser (Chrome -> Window -> Extensions). We'll enable it later but let's start off simple and connect to Ganache directly for now.
 
 In terminal #2:
 ```
