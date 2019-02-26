@@ -96,3 +96,10 @@ Without it:
 
 
 
+
+
+## TODO
+
+### Possible Errors
+* 'Something went wrong loading the contract: TypeError: Cannot read property 'gasLimit' of null'
+* 
