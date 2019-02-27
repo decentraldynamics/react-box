@@ -1,24 +1,22 @@
 # React+Data Starter Truffle Box
 
-This box extends on the basic react-box by adding:
+This ready-to-hack box extends on the basic react-box by adding:
 * A lower level view on the data structures truffle uses under the hood
 * Showing events emitted from a contract call.
 * Simple get/set UI components for interacting with a contract.
 * Debug logs and helpful messaging for when things don't go right.
-* A walking tour of the DApp's showing some of the interactions between the browser, MetaMask, Ganache and the contract.
+* A walking tour of the DApp showing some of the interactions between the browser, MetaMask, Ganache and the contract.
 
 
 ## Installation
 
 In terminal #1:
 ```
-$ git clone https://github.com/decentraldynamics/react-data-starter-box.git
-$ cd react-data-starter-box/
 $ npm install -g truffle
+$ mkdir react-data-starter-box
+$ cd react-data-starter-box
+$ truffle unbox git@github.com:decentraldynamics/react-data-starter-box
 $ npm install
-$ truffle compile
-$ truffle test
-$ truffle migrate
 ```
 
 Start up the [Ganache UI](https://truffleframework.com/ganache) listening on port 8545 (UI: Settings -> Port Number). OR you can use the cli version (run in its own terminal window):
@@ -27,6 +25,11 @@ $ npm install -g ganache-cli
 $ ganache-cli -p 8545
 ```
 
+```
+$ truffle compile
+$ truffle test
+$ truffle migrate
+```
 Note: Disable MetaMask if you already have it installed in your browser (Chrome -> Window -> Extensions). We'll enable it later but let's start off simple and connect to Ganache directly for now.
 
 In terminal #2:
@@ -36,7 +39,7 @@ $ npm install
 $ npm start
 ```
 
-Connect to http://localhost:3000 an you should see something like:
+Connect to http://localhost:3000 and you should see something like:
 
 <img src="docs/full_screenshot.png" width="500" border="1">
 
@@ -64,15 +67,13 @@ Advice: Be very careful doing any math in Solidity contracts. Start each functio
 
 Setting things back to a valid int will fix the contract state.
 
-### Shutdown Ganache and try connecting again
+### Shutdown Ganache
 
-Ctrl-C or exit Ganache and hit http://localhost:3000 again. You get an alert like: 
+Ctrl-C or exit Ganache and hit http://localhost:3000 again. The DApp doesnt have anything to connect to so you get an alert like: 
 
 `Something went wrong loading accounts from [http://127.0.0.1:8545]: Error: Invalid JSON RPC response: ""`. 
 
-Thats because our web app doesnt have an ethereum client to connect
-
-Start up Ganache UI or ganache-cli and try again. This time you should get an alert like: 
+Start up Ganache and try again. This time you should get an alert like: 
 
 `Something went wrong loading the contract: Error: SimpleStorage has not been deployed to detected network (network/artifact mismatch)`
 
@@ -81,7 +82,7 @@ Ganache starts off with a clean DB everytime so anything you deployed earlier wi
 Deploy the contracts again: `$ truffle migrate` and reload.
 
 
-### Enable & Disable the MetaMask extension
+### Enable/Disable MetaMask
 
 `utils/getWeb3.js` does its best to create a web3 instance connected to any provider it can find. It checks (in order):
   1. Something built into the browser
